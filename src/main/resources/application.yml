@@ -1,0 +1,35 @@
+server:
+  port: 8087
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/carrentaldb
+    username: root
+    password: 9553320907
+    initialization-mode: always
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    show-sql: true
+    defer-datasource-initialization: true
+    open-in-view: false
+
+  sql:
+    init:
+      mode: always
+
+jwt:
+  expirationTime: 3600000
+  secretKey: apple-banana-orange-grapefruit22
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
